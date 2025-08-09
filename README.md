@@ -46,5 +46,5 @@ It includes **data cleaning, exploratory data analysis (EDA), visualizations, an
 ## 🚀 How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/airline-ticket-pricing-analysis.git
+   git clone https://github.com/nishanthselvakumar1302/airline-ticket-pricing-analysis.git
    cd airline-ticket-pricing-analysis
