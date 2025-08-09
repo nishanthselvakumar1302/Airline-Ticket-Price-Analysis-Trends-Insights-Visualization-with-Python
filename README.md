@@ -91,12 +91,13 @@ A **Streamlit-based dashboard** is included for **real-time, user-driven explora
 ---
 
 ## 📸 Screenshots
-*(Place your actual screenshots in the `images/` folder and update file names below)*
 
-1. Dashboard Overview  
-2. Price Distribution by Airline  
-3. Top 15 Most Expensive Routes  
-4. Jupyter Notebook EDA  
+**Dashboard Overview**
+
+![d1](img/d1.png)
+![d1](img/d2.png)
+![d1](img/d3.png)
+
 
 ---
 
