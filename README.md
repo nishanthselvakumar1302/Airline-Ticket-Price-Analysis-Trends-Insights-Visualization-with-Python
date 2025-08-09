@@ -1,50 +1,107 @@
-# ✈ Airline Ticket Pricing Analysis
+# ✈ Airline Ticket Pricing Analysis & Interactive Dashboard
 
-This project provides an end-to-end **data analysis** of airline ticket pricing trends using Python.  
-It includes **data cleaning, exploratory data analysis (EDA), visualizations, and key business insights** that can help optimize booking decisions.
-
----
-
-## 📂 Project Files
-- **airline_analysis.ipynb** → Full Python analysis notebook
-- **airline_cleaned.csv** → Cleaned dataset ready for further use
-- **requirements.txt** → Python dependencies
+## 📖 Introduction
+This project delivers an **end-to-end data analysis** and **interactive dashboard** for airline ticket pricing trends using **Python**.  
+It combines **data preprocessing**, **exploratory data analysis (EDA)**, **statistical testing**, and **machine learning** to uncover actionable insights in airline pricing patterns.  
+A **Streamlit-based dashboard** is included for **real-time, user-driven exploration** of the data.
 
 ---
 
-## 📊 Key Insights
-
-### 1️⃣ Cheapest Booking Window
-- Lowest prices are found **around 45–50 days before departure**.
-- Prices rise sharply when fewer than 10 days remain.
-
-### 2️⃣ Price by Travel Class
-- **Economy median price:** ₹5,772  
-- **Business median price:** ₹53,164  
-- Business class is **~9× more expensive** than economy.
-
-### 3️⃣ Airline-Wise Average Prices
-- **Cheapest airlines:** IndiGo, Air Asia  
-- **Most expensive airlines:** Vistara, Air India (Business class routes increase averages).
-
-### 4️⃣ Route Pricing Trends
-- **Most expensive route:** Chennai → Bangalore (~₹25,082 avg)  
-- **Cheapest route:** Delhi → Mumbai (~₹4,250 avg)
-
-### 5️⃣ Flight Duration vs Price
-- Shorter flights (<2 hrs) are usually cheaper,  
-  but some premium short routes break this trend due to demand.
+## 🎯 Project Objective
+- Analyze pricing trends by airline, route, class, booking window, and stops.
+- Identify factors affecting ticket prices.
+- Build an interactive dashboard for dynamic data exploration.
+- Provide business recommendations for airlines, agencies, and travelers.
 
 ---
 
-## 🛠 Tech Stack
-- **Python:** Pandas, NumPy, Matplotlib, Seaborn
-- **Jupyter Notebook** for interactive analysis
+## 📂 Project Structure
+**airline-ticket-pricing**
+
+- airline_analysis.ipynb # Jupyter Notebook for analysis
+- airline_cleaned.csv # Cleaned dataset
+ - dashboard.py # Streamlit dashboard script
+- requirements.txt # Python dependencies
+- images/ # Folder for screenshots
+- README.md # Project documentation
 
 ---
 
-## 🚀 How to Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/nishanthselvakumar1302/airline-ticket-pricing-analysis.git
-   cd airline-ticket-pricing-analysis
+## 📊 Dataset Description
+- **Source:** Internal airline dataset (can be replaced with public dataset).
+- **Size:** ~300,000 rows × 12 columns.
+
+| Column            | Description                              |
+|-------------------|------------------------------------------|
+| airline           | Airline name                             |
+| flight            | Flight code                              |
+| source_city       | Departure city                           |
+| departure_time    | Time of departure                        |
+| stops             | Number of stops (zero/one/two)           |
+| arrival_time      | Time of arrival                          |
+| destination_city  | Arrival city                             |
+| class             | Travel class (Economy/Business)          |
+| duration          | Flight duration (hours)                  |
+| days_left         | Days before departure                    |
+| price             | Ticket price (₹)                         |
+
+---
+
+## 🛠 Methodology
+
+### 1. Data Cleaning
+- Removed duplicates and handled missing values.
+- Standardized column names and data types.
+- Converted numeric and datetime columns.
+- Created **route** column: `source_city → destination_city`.
+
+### 2. Exploratory Data Analysis (EDA)
+- Price distribution across airlines.
+- Price variation with booking lead time (`days_left`).
+- Class-wise price comparison.
+- Route-level pricing patterns.
+- Flight duration vs. price correlation.
+
+### 3. Statistical Testing
+- **ANOVA** to test mean price differences across airlines and classes.
+- **T-tests** for Economy vs Business fares.
+
+### 4. Machine Learning
+- **Random Forest model** to predict ticket prices.
+- Feature importance analysis to identify key pricing drivers.
+
+### 5. Dashboard Development
+- Interactive **Streamlit dashboard** with sidebar filters.
+- KPIs and visualizations updating dynamically.
+- *(Optional)* Price prediction form for custom flight details.
+
+---
+
+## 📌 Key Insights
+- **Cheapest booking window:** ~45–50 days before departure.  
+- **Most expensive booking window:** ~2 days before departure.  
+- **Class price difference:**  
+  - Economy median ≈ ₹5,772  
+  - Business median ≈ ₹53,164  
+- **Lowest average price airline:** AirAsia (~₹4,091).  
+- **Highest average price airline:** Vistara (~₹30,397).  
+- **Most expensive route:** Chennai → Bangalore (~₹25,082 avg).  
+- Weak positive correlation (~0.20) between flight duration and price.
+
+---
+
+## 📸 Screenshots
+*(Place your actual screenshots in the `images/` folder and update file names below)*
+
+1. Dashboard Overview  
+2. Price Distribution by Airline  
+3. Top 15 Most Expensive Routes  
+4. Jupyter Notebook EDA  
+
+---
+
+## Clone the Repository 
+
+```bash
+git clone https://github.com/nishanthselvakumar1302/airline-ticket-pricing.git
+cd airline-ticket-pricing
